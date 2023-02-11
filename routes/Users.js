@@ -29,7 +29,7 @@ router.post("/login", async (req, res) => {
           { username: user.username, id: user.id },
           "importantsecretqwe1fos"
         );
-        res.json(accessToken);
+        res.json({ token: accessToken, username: username, id: user.id });
       }
     });
   }
