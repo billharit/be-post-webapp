@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
 
 router.get("/byId/:id", async (req, res) => {
   const id = req.params.id;
-  const post = await Posts.findByPk(id);
+  const post = await Posts.findByPk(id, { include: { model: Likes } });
   res.json(post);
 });
 
